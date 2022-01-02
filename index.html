@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title>Mehmet Ali</title>
+        <link href="style.css" rel="stylesheet">
+        <script src="script.js"></script>
+    </head>
+    <body onload="Timer()">
+ 
+    <header class="video-header">
+        <video src="movie/UEFA Champions League.mp4" autoplay loop playsinline muted></video>
+        <div class="description">
+            <button onclick="cancel()"; onclick="NewPosition()" onclick="playAudio()">
+                <img src="image/Champions League.png" width="56" height="56"/>
+
+                <audio id="my_audio"">
+                    <source src="music/soccer_sound.mp3" type="audio/mpeg" >
+                  </audio>
+            </button>
+            
+                <p id="board-time"></p>
+                <p id="board-xp"></p>
+            
+        </div>
+      </header>
+
+      <div class="footer">
+        <audio id="my_audio" controls autoplay="autoplay" loop="true">
+            <source src="music/uefa-champions.mp3" type="audio/mpeg" autoplay="true">
+          </audio>
+      </div>
+    </body>
+
+    <script>
+        var buttonPosition = document.querySelector("button");
+        buttonPosition.addEventListener("click",NewPosition);
+        function NewPosition()
+         {
+            var x = Math.floor(Math.random()*500)+1;
+            var y = Math.floor(Math.random()*500)+1;
+            buttonPosition.style.left = x+"px";
+            buttonPosition.style.top = y+"px";
+        }
+        var x = document.getElementById("my_audio");
+        function playAudio() {
+        x.play();
+        }
+    </script>
+</html>
